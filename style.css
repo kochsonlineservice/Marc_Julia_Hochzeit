@@ -1,3 +1,24 @@
 @import url('./styles/global.css');
 @import url('./styles/layout.css');
 @import url('./styles/assets.css');
+
+
+
+:root {
+    /* Farben */
+    --primary-color: #8B1E2D;
+    --primary-dark: #6B1522;
+    --secondary-color: #C9A86A;
+
+    --background-color: #FFFDF9;
+    --background-light: #F7F3EE;
+
+    --text-color: #2B2B2B;
+    --text-light: #6B6B6B;
+
+    --white: #FFFFFF;
+
+    /* Schriftarten */
+    --font-primary: Arial, sans-serif;
+    --font-heading: Georgia, serif;
+}
