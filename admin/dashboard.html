@@ -1,129 +1,115 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hochzeitsverwaltung – Marc & Julia</title>
-
-    <link rel="stylesheet" href="./admin.css">
-</head>
-
-<body>
-
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
     <header class="dashboard-header">
-        <div class="dashboard-header-content">
-            <div>
-                <h1>Marc & Julia</h1>
-                <p>Hochzeitsverwaltung</p>
-            </div>
-
-            <button id="logoutButton" type="button">
-                Abmelden
-            </button>
+      <div class="dashboard-header-content">
+        <div>
+          <h1>Marc & Julia</h1>
+          <p>Hochzeitsverwaltung</p>
         </div>
+        <button id="logoutButton" type="button">Abmelden</button>
+      </div>
     </header>
 
     <main class="dashboard-container">
+      <section class="dashboard-welcome">
+        <h2>Willkommen, Julia! ♥</h2>
+        <p>Hier findest du alle Rückmeldungen deiner Hochzeitsgäste.</p>
+      </section>
 
-        <section class="dashboard-welcome">
-            <h2>Willkommen, Julia! ♥</h2>
-            <p>Hier findest du alle Rückmeldungen deiner Hochzeitsgäste.</p>
-        </section>
+      <section class="statistik-bereich">
+        <div class="statistik-karte">
+          <span>Zusagen</span>
+          <strong id="zusagenAnzahl">0</strong>
+        </div>
+        <div class="statistik-karte">
+          <span>Absagen</span>
+          <strong id="absagenAnzahl">0</strong>
+        </div>
+        <div class="statistik-karte">
+          <span>Erwachsene</span>
+          <strong id="erwachseneAnzahl">0</strong>
+        </div>
+        <div class="statistik-karte">
+          <span>Kinder</span>
+          <strong id="kinderAnzahl">0</strong>
+        </div>
+      </section>
 
-        <!-- STATISTIKEN -->
+      <section class="dashboard-section">
+        <h2>Buffet-Übersicht</h2>
+        <div class="buffet-uebersicht">
+          <div>
+            <span>Vegan</span>
+            <strong id="veganAnzahl">0</strong>
+          </div>
+          <div>
+            <span>Vegetarisch</span>
+            <strong id="vegetarischAnzahl">0</strong>
+          </div>
+        </div>
+      </section>
 
-        <section class="statistik-bereich">
+      <section class="dashboard-section">
+        <div class="section-kopf">
+          <h2>Gästeliste</h2>
+          <div class="dashboard-aktionen">
+            <button id="refreshButton" type="button">↻ Aktualisieren</button>
+            <button id="exportButton" type="button">CSV Export</button>
+            <button id="pdfButton" type="button">PDF erstellen</button>
+          </div>
+        </div>
 
-            <div class="statistik-karte">
-                <span>Zusagen</span>
-                <strong id="zusagenAnzahl">0</strong>
-            </div>
+        <div class="gaesteliste-filter">
+          <input
+            type="text"
+            id="sucheGast"
+            placeholder="Nach Familiennamen suchen..."
+            aria-label="Nach Familiennamen suchen"
+          />
 
-            <div class="statistik-karte">
-                <span>Absagen</span>
-                <strong id="absagenAnzahl">0</strong>
-            </div>
+          <select id="filterTeilnahme" aria-label="Teilnahme filtern">
+            <option value="alle">Alle Gäste</option>
+            <option value="ja">Nur Zusagen</option>
+            <option value="nein">Nur Absagen</option>
+          </select>
+        </div>
 
-            <div class="statistik-karte">
-                <span>Erwachsene</span>
-                <strong id="erwachseneAnzahl">0</strong>
-            </div>
+        <!-- Desktop: Tabelle -->
+        <div class="tabelle-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Familie</th>
+                <th>Status</th>
+                <th>Erwachsene</th>
+                <th>Kinder</th>
+                <th>Vegan</th>
+                <th>Vegetarisch</th>
+                <th>Nachricht</th>
+              </tr>
+            </thead>
+            <tbody id="gaesteliste"></tbody>
+          </table>
+        </div>
 
-            <div class="statistik-karte">
-                <span>Kinder</span>
-                <strong id="kinderAnzahl">0</strong>
-            </div>
-
-        </section>
-
-        <!-- BUFFET -->
-
-        <section class="dashboard-section">
-
-            <h2>Buffet-Übersicht</h2>
-
-            <div class="buffet-uebersicht">
-
-                <div>
-                    <span>Vegan</span>
-                    <strong id="veganAnzahl">0</strong>
-                </div>
-
-                <div>
-                    <span>Vegetarisch</span>
-                    <strong id="vegetarischAnzahl">0</strong>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- GÄSTELISTE -->
-
-        <section class="dashboard-section">
-
-            <div class="section-kopf">
-                <h2>Gästeliste</h2>
-                <button id="exportButton" type="button">
-                    Exportieren
-                </button>
-            </div>
-
-            <div class="tabelle-container">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Familie</th>
-                            <th>Status</th>
-                            <th>Erwachsene</th>
-                            <th>Kinder</th>
-                            <th>Vegan</th>
-                            <th>Vegetarisch</th>
-                            <th>Nachricht</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="gaesteliste">
-                        <tr>
-                            <td colspan="7">
-                                Gästedaten werden geladen ...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-        </section>
-
+        <!-- Smartphone: Karten -->
+        <div
+          id="gaestelisteKarten"
+          class="gaesteliste-karten"
+          aria-live="polite"
+        ></div>
+      </section>
     </main>
 
     <script src="../js/db.js"></script>
-    <script type="module" src="./admin-dashboard.js"></script>
-
-</body>
+    <script type="module" src="./dashboard.js"></script>
+    <script type="module" src="./bearbeiten.js"></script>
+  </body>
 </html>

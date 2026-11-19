@@ -1,4 +1,3 @@
-
 /* ======================================
    ALLGEMEIN
 ====================================== */
@@ -15,9 +14,8 @@ body {
     color: #3c3030;
 }
 
-
 /* ======================================
-   LOGIN CONTAINER
+   LOGIN
 ====================================== */
 
 .login-container {
@@ -28,11 +26,6 @@ body {
     padding: 25px;
 }
 
-
-/* ======================================
-   LOGIN CARD
-====================================== */
-
 .login-card {
     width: 100%;
     max-width: 440px;
@@ -42,11 +35,6 @@ body {
     box-shadow: 0 8px 30px rgba(60, 30, 30, 0.10);
     text-align: center;
 }
-
-
-/* ======================================
-   ÜBERSCHRIFT
-====================================== */
 
 .login-herz {
     color: #8b1e2d;
@@ -88,11 +76,6 @@ body {
     margin-bottom: 28px;
 }
 
-
-/* ======================================
-   FORMULAR
-====================================== */
-
 .form-group {
     text-align: left;
     margin-bottom: 20px;
@@ -118,11 +101,6 @@ body {
     border-color: #8b1e2d;
 }
 
-
-/* ======================================
-   BUTTON
-====================================== */
-
 #loginButton {
     width: 100%;
     padding: 15px;
@@ -139,22 +117,12 @@ body {
     background: #701724;
 }
 
-
-/* ======================================
-   FEHLER
-====================================== */
-
 .login-fehler {
     color: #b42318;
     font-size: 13px;
     text-align: left;
     margin-bottom: 15px;
 }
-
-
-/* ======================================
-   FOOTER
-====================================== */
 
 .login-footer {
     margin-top: 28px;
@@ -174,26 +142,8 @@ body {
     text-decoration: underline;
 }
 
-
 /* ======================================
-   RESPONSIVE
-====================================== */
-
-@media (max-width: 480px) {
-
-    .login-card {
-        padding: 35px 22px;
-    }
-
-    .login-card h1 {
-        font-size: 28px;
-    }
-
-}
-
-
-/* ======================================
-   DASHBOARD
+   DASHBOARD HEADER
 ====================================== */
 
 .dashboard-header {
@@ -205,10 +155,10 @@ body {
 .dashboard-header-content {
     max-width: 1400px;
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
 .dashboard-header h1 {
@@ -236,12 +186,12 @@ body {
     background-color: #f0e5d9;
 }
 
-
 /* ======================================
-   DASHBOARD CONTAINER
+   DASHBOARD LAYOUT
 ====================================== */
 
 .dashboard-container {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px 5%;
@@ -260,11 +210,28 @@ body {
 
 .dashboard-welcome p {
     color: #756767;
+    line-height: 1.5;
 }
 
+.dashboard-section {
+    min-width: 0;
+    background-color: #fffdf9;
+    border: 1px solid #eadfd4;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-section h2 {
+    font-family: Georgia, serif;
+    color: #8b1e2d;
+    font-size: 24px;
+    margin: 0 0 22px;
+}
 
 /* ======================================
-   STATISTIK KARTEN
+   STATISTIKEN
 ====================================== */
 
 .statistik-bereich {
@@ -280,7 +247,6 @@ body {
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -297,31 +263,8 @@ body {
     font-size: 34px;
 }
 
-
 /* ======================================
-   DASHBOARD BEREICHE
-====================================== */
-
-.dashboard-section {
-    background-color: #fffdf9;
-    border: 1px solid #eadfd4;
-    border-radius: 12px;
-    padding: 28px;
-    margin-bottom: 30px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-}
-
-.dashboard-section h2 {
-    font-family: Georgia, serif;
-    color: #8b1e2d;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 22px;
-}
-
-
-/* ======================================
-   BUFFET ÜBERSICHT
+   BUFFET
 ====================================== */
 
 .buffet-uebersicht {
@@ -335,11 +278,9 @@ body {
     border-left: 4px solid #c6a15b;
     border-radius: 6px;
     padding: 20px 30px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
-
     min-width: 150px;
 }
 
@@ -352,9 +293,8 @@ body {
     color: #8b1e2d;
 }
 
-
 /* ======================================
-   GÄSTELISTE
+   GÄSTELISTE: KOPF UND BUTTONS
 ====================================== */
 
 .section-kopf {
@@ -369,71 +309,240 @@ body {
     margin: 0;
 }
 
+.dashboard-aktionen {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dashboard-aktionen button {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 .section-kopf button {
     background-color: #8b1e2d;
     color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 11px 20px;
-    cursor: pointer;
 }
 
 .section-kopf button:hover {
     background-color: #6f1724;
 }
 
+#refreshButton {
+    background-color: #f0e5d9;
+    color: #8b1e2d;
+}
+
+#refreshButton:hover {
+    background-color: #e6d5c5;
+}
+
+#pdfButton {
+    background-color: #c6a15b;
+    color: white;
+}
+
+#pdfButton:hover {
+    background-color: #aa8746;
+}
+
+.dashboard-aktionen button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ======================================
+   SUCHE UND FILTER
+====================================== */
+
+.gaesteliste-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.gaesteliste-filter input,
+.gaesteliste-filter select {
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #d8c8bd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.gaesteliste-filter input {
+    width: 280px;
+    max-width: 100%;
+}
+
+.gaesteliste-filter select {
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.gaesteliste-filter input:focus,
+.gaesteliste-filter select:focus {
+    border-color: #8b1e2d;
+    box-shadow: 0 0 0 3px rgba(139, 30, 45, 0.1);
+}
+
+.gaesteliste-filter input::placeholder {
+    color: #999999;
+}
+
+/* ======================================
+   DESKTOP-TABELLE
+====================================== */
+
 .tabelle-container {
     width: 100%;
     overflow-x: auto;
 }
 
-table {
+.tabelle-container table {
     width: 100%;
-    border-collapse: collapse;
     min-width: 750px;
+    border-collapse: collapse;
 }
 
-th,
-td {
+.tabelle-container th,
+.tabelle-container td {
     text-align: left;
     padding: 15px 12px;
     border-bottom: 1px solid #eadfd4;
     font-size: 14px;
+    vertical-align: top;
 }
 
-th {
+.tabelle-container th {
     background-color: #f8f3ed;
     color: #8b1e2d;
     font-weight: bold;
 }
 
-td {
+.tabelle-container td {
     color: #514747;
+    white-space: pre-line;
+    line-height: 1.6;
 }
 
-tbody tr:hover {
+.tabelle-container tbody tr:hover {
     background-color: #faf6f1;
 }
 
+/* ======================================
+   MOBILE-KARTEN
+====================================== */
+
+.gaesteliste-karten {
+    display: none;
+}
+
+.gast-karte {
+    background: #fffdf9;
+    border: 1px solid #eadfd4;
+    border-radius: 10px;
+    padding: 17px;
+    box-shadow: 0 2px 8px rgba(60, 30, 30, 0.05);
+}
+
+.gast-karte-kopf {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #eadfd4;
+}
+
+.gast-karte-kopf h3 {
+    color: #8b1e2d;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+.gast-status {
+    flex-shrink: 0;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.gast-status-zusage {
+    color: #246b3b;
+    background: #e8f4eb;
+}
+
+.gast-status-absage {
+    color: #9b2632;
+    background: #f8e9e9;
+}
+
+.gast-karte-feld {
+    margin-top: 12px;
+    min-width: 0;
+}
+
+.gast-karte-feld strong {
+    display: block;
+    color: #8b1e2d;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.gast-karte-feld p {
+    color: #514747;
+    font-size: 14px;
+    line-height: 1.55;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.gast-karte-buffet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 14px;
+    background: #f8f3ed;
+    border-radius: 8px;
+}
+
+.gast-karte-buffet .gast-karte-feld {
+    margin-top: 0;
+}
+
+.gast-karte-buffet .gast-karte-feld p {
+    font-size: 17px;
+    font-weight: bold;
+}
 
 /* ======================================
-   RESPONSIVE DESIGN
+   RESPONSIVE
 ====================================== */
 
 @media (max-width: 900px) {
-
     .statistik-bereich {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 @media (max-width: 600px) {
-
-    .dashboard-container {
-        padding: 25px 4%;
-    }
-
     .dashboard-header {
         padding: 18px 4%;
     }
@@ -446,12 +555,23 @@ tbody tr:hover {
         padding: 9px 13px;
     }
 
+    .dashboard-container {
+        padding: 25px 4%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .dashboard-welcome {
+        margin-bottom: 25px;
+    }
+
     .dashboard-welcome h2 {
         font-size: 25px;
     }
 
     .statistik-bereich {
         gap: 12px;
+        margin-bottom: 25px;
     }
 
     .statistik-karte {
@@ -463,7 +583,8 @@ tbody tr:hover {
     }
 
     .dashboard-section {
-        padding: 18px;
+        padding: 16px;
+        min-width: 0;
     }
 
     .section-kopf {
@@ -471,5 +592,84 @@ tbody tr:hover {
         flex-direction: column;
     }
 
+    .dashboard-aktionen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .dashboard-aktionen button {
+        width: 100%;
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    #refreshButton {
+        grid-column: 1 / -1;
+    }
+
+    .gaesteliste-filter {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .gaesteliste-filter input,
+    .gaesteliste-filter select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Auf dem Smartphone Karten statt der breiten Tabelle anzeigen */
+    .tabelle-container {
+        display: none;
+    }
+
+    .gaesteliste-karten {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        width: 100%;
+    }
 }
 
+@media (max-width: 360px) {
+    .statistik-karte {
+        padding: 14px;
+    }
+
+    .statistik-karte span {
+        font-size: 13px;
+    }
+
+    .gast-karte {
+        padding: 14px;
+    }
+
+    .gast-karte-kopf h3 {
+        font-size: 17px;
+    }
+}
+
+.gast-bearbeiten-button {
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #8b1e2d;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.gast-bearbeiten-button:hover {
+    background: #701724;
+}
+
+.gast-karte > .gast-bearbeiten-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 11px;
+}
