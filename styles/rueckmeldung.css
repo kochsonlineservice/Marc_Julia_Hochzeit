@@ -1,0 +1,522 @@
+
+/* =========================================
+   RÜCKMELDUNG – MOBILE FIRST
+   ========================================= */
+
+.rueckmeldung-page {
+    width: 100%;
+    padding: 25px 18px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Einleitung */
+
+.rueckmeldung-header {
+    text-align: center;
+    padding: 30px 5px;
+}
+
+.rueckmeldung-header h1 {
+    font-family: var(--font-heading);
+    font-size: 34px;
+    color: var(--primary-color);
+   margin-bottom: 25px;
+}
+
+.rueckmeldung-header p {
+    font-family: var(--font-primary);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.hochzeitsdatum {
+    color: var(--secondary-color) !important;
+    font-weight: bold;
+}
+
+/* Anmeldebereich */
+
+.anmeldung {
+    width: 100%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    border-radius: 12px;
+}
+
+.anmeldung h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 27px;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (min-width: 700px) {
+
+    .rueckmeldung-page {
+        max-width: 750px;
+        padding: 40px 25px;
+    }
+
+    .rueckmeldung-header h1 {
+        font-size: 44px;
+        margin-bottom: 25px;
+    }
+
+    .anmeldung {
+        padding: 40px;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+   ========================================= */
+
+@media (min-width: 1100px) {
+
+    .rueckmeldung-page {
+        max-width: 850px;
+        padding-top: 60px;
+    }
+
+}
+
+
+
+/* =========================================
+   ANMELDEFORMULAR
+   ========================================= */
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.form-group label,
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+
+    border: 1px solid #D8CEC2;
+    border-radius: 8px;
+
+    background-color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.radio-option {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px !important;
+    font-weight: normal !important;
+}
+
+.radio-option input {
+    accent-color: var(--primary-color);
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Kinder: Name und Alter */
+
+.kind-eingabe {
+    display: grid;
+    grid-template-columns: 1fr 90px;
+    gap: 12px;
+    align-items: end;
+}
+
+.kind-eingabe input {
+    width: 100%;
+}
+
+
+/* =========================================
+   FORMULAR – MOBILE FIRST
+   ========================================= */
+
+/* Alle Formularfelder */
+
+.form-group input,
+.form-group textarea,
+.gast-eingabe input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+
+    border: 1px solid #D8CEC2;
+    border-radius: 8px;
+
+    background-color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+/* Zahlenfelder */
+
+.form-group input[type="number"] {
+    max-width: 100%;
+}
+
+/* Dynamische Gäste */
+
+.gast-eingabe {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 20px;
+    padding: 15px;
+
+    background-color: var(--white);
+    border: 1px solid #E8DED3;
+    border-radius: 10px;
+}
+
+.gast-eingabe label {
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Abstand zwischen Erwachsenen und Kindern */
+
+#erwachseneContainer,
+#kinderContainer {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* Fokus */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.gast-eingabe input:focus {
+    outline: 2px solid var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+
+/* =========================================
+   TABLET UND DESKTOP
+   ========================================= */
+
+@media (min-width: 700px) {
+
+    .rueckmeldung-page {
+        max-width: 750px;
+    }
+
+    .gast-eingabe {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================
+   RADIO BUTTONS – KORREKTUR
+   ========================================= */
+
+.radio-option {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    width: 100%;
+    margin-bottom: 15px !important;
+
+    font-weight: normal !important;
+}
+
+.radio-option input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-height: 18px !important;
+    flex: 0 0 18px;
+
+    margin: 0;
+    padding: 0;
+
+    accent-color: var(--primary-color);
+}
+
+
+/* =========================================
+   ABSAGE DIALOG
+   ========================================= */
+
+.absage-dialog {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.absage-dialog.aktiv {
+    display: flex;
+}
+
+.absage-inhalt {
+    width: 100%;
+    max-width: 420px;
+    padding: 25px;
+
+    box-sizing: border-box;
+    text-align: center;
+
+    background-color: var(--background-color);
+    border-radius: 16px;
+}
+.absage-inhalt img {
+    width: 100%;
+    height: 220px;
+    display: block;
+
+    object-fit: cover;
+    object-position: center 20%;
+
+    border-radius: 10px;
+}
+
+.absage-inhalt h2 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 30px;
+}
+
+.absage-inhalt p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.absage-inhalt button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Absenden-Button */
+
+.absenden-button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 20px;
+
+    background-color: var(--primary-color);
+    color: var(--white);
+
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.absenden-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ======================================
+   ERFOLGSDIALOG
+====================================== */
+
+.erfolg-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+}
+
+.erfolg-dialog[hidden] {
+    display: none;
+}
+
+.erfolg-dialog.aktiv {
+    opacity: 1;
+    visibility: visible;
+}
+
+.erfolg-inhalt {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 35px 25px;
+
+    background: var(--background-light);
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.erfolg-dialog.aktiv .erfolg-inhalt {
+    transform: translateY(0);
+}
+
+.erfolg-herz {
+    font-size: 42px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.erfolg-inhalt h2 {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-bottom: 18px;
+}
+
+.erfolg-inhalt p {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.erfolg-datum {
+    margin-top: 22px;
+    margin-bottom: 25px;
+
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 16px;
+}
+
+#erfolgSchliessen {
+    width: 100%;
+    padding: 15px 20px;
+
+    background: var(--primary-color);
+    color: var(--white);
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+#erfolgSchliessen:hover {
+    background: var(--primary-dark);
+}
+
+/* Smartphone */
+
+@media (max-width: 480px) {
+
+    .erfolg-dialog {
+        padding: 18px;
+    }
+
+    .erfolg-inhalt {
+        max-width: 100%;
+        padding: 30px 22px;
+        border-radius: 16px;
+    }
+
+    .erfolg-inhalt h2 {
+        font-size: 27px;
+    }
+
+    .erfolg-inhalt p {
+        font-size: 15px;
+    }
+
+    .erfolg-herz {
+        font-size: 38px;
+    }
+
+}
+
+
+/* Verborgene Buttons und Bereiche wirklich ausblenden */
+
+button[hidden],
+div[hidden],
+p[hidden] {
+    display: none !important;
+}
+
+
+

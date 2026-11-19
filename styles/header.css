@@ -54,3 +54,55 @@ nav a {
 nav a:hover {
     color: #8B1E2D;
 }
+
+@media (max-width: 700px) {
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+#footer {
+    margin-top: 80px;
+}
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+footer p:last-child {
+    color: #E8D5A8;
+}

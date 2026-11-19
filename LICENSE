@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Location – Marc & Julia Hochzeit</title>
+
+    <meta
+        name="description"
+        content="Der Sonnenhof – die Location für die Hochzeit von Marc & Julia."
+    >
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/icons/favicon.svg"
+    >
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main class="location-page">
+
+        <h1>Unsere Location</h1>
+
+        <h2>Sonnenhof Eventlocation</h2>
+
+        <p>
+            Hier feiern Marc & Julia ihren besonderen Tag.
+        </p>
+
+        <div class="location-gallery">
+
+            <img
+                src="./assets/img/sonnenhof1.webp"
+                alt="Sonnenhof Eventlocation"
+            >
+
+            <img
+                src="./assets/img/sonnenhof2.webp"
+                alt="Sonnenhof Eventlocation"
+            >
+
+            <img
+                src="./assets/img/sonnenhof3.webp"
+                alt="Sonnenhof Eventlocation"
+            >
+
+        </div>
+
+        <div class="location-address">
+
+            <h2>Adresse</h2>
+
+            <p>
+                Sonnenhof Eventlocation<br>
+                Sonnenhof 1<br>
+                70378 Stuttgart
+            </p>
+
+        </div>
+
+        <a
+            href="https://www.dersonnenhof.com/"
+            target="_blank"
+            rel="noopener"
+            class="location-button"
+        >
+            Zur Website des Sonnenhofs
+        </a>
+
+        <br>
+
+        <a
+            href="./index.html"
+            class="back-link"
+        >
+            ← Zurück zur Hochzeitsseite
+        </a>
+
+    </main>
+
+</body>
+
+</html>
