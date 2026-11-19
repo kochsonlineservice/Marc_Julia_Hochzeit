@@ -1,4 +1,8 @@
 
+// ======================================
+// HOCHZEITSDATEN
+// ======================================
+
 const weddingData = {
     brautPaarName: "Marc & Julia",
     begruessung: "Wir sagen ja ",
@@ -37,27 +41,46 @@ window.firebaseReady = (async function () {
     const version = "13.3.0";
     const base = `https://www.gstatic.com/firebasejs/${version}`;
 
-    const { initializeApp } = await import(`${base}/firebase-app.js`);
+    // Firebase App
+
+    const { initializeApp } =
+        await import(`${base}/firebase-app.js`);
+
+    // Firebase Datenbank
 
     const {
         getDatabase,
         ref,
         push,
-        serverTimestamp
+        serverTimestamp,
+        get
     } = await import(`${base}/firebase-database.js`);
+
+    // Firebase Authentifizierung
 
     const {
         getAuth,
         onAuthStateChanged,
-        signInAnonymously
+        signInAnonymously,
+        signInWithEmailAndPassword,
+        signOut
     } = await import(`${base}/firebase-auth.js`);
+
+
+    // ==================================
+    // APP UND DIENSTE ERSTELLEN
+    // ==================================
 
     const app = initializeApp(firebaseConfig);
 
     const database = getDatabase(app);
     const auth = getAuth(app);
 
-    // Auf bestehenden Login warten oder anonym anmelden
+
+    // ==================================
+    // AUTHENTIFIZIERUNG PRÜFEN
+    // ==================================
+
     const user = await new Promise((resolve, reject) => {
 
         const unsubscribe = onAuthStateChanged(auth, async user => {
@@ -70,23 +93,41 @@ window.firebaseReady = (async function () {
             }
 
             try {
+
                 const result = await signInAnonymously(auth);
+
                 resolve(result.user);
+
             } catch (error) {
+
                 reject(error);
+
             }
         });
     });
 
+
     console.log("Firebase erfolgreich verbunden!");
-    console.log("Gast angemeldet:", user.uid);
+    console.log("Angemeldeter Benutzer:", user.uid);
+
+
+    // ==================================
+    // FIREBASE FUNKTIONEN BEREITSTELLEN
+    // ==================================
 
     return {
+        app,
         database,
         auth,
+
         ref,
         push,
-        serverTimestamp
+        get,
+        serverTimestamp,
+
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+        signOut
     };
 
 })();
