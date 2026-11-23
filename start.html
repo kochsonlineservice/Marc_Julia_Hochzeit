@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marc & Julia – Unsere Hochzeit</title>
+
+    <meta name="description" content="Die Hochzeit von Marc & Julia am 16. August 2027.">
+
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="stylesheet" href="./styles/startseite.css">
+</head>
+
+<body>
+
+    <!-- BRIEFUMSCHLAG -->
+    <section id="briefStart" class="brief-start">
+
+        <div class="brief-einleitung">
+            <p>Eine besondere Einladung</p>
+            <h1>Für euch von Herzen</h1>
+            <span>Wir haben eine Überraschung für euch ...</span>
+        </div>
+
+        <button
+            type="button"
+            id="briefOeffnen"
+            class="umschlag-button"
+            aria-label="Hochzeitseinladung öffnen"
+        >
+            <div class="umschlag">
+
+                <div class="umschlag-inhalt"></div>
+
+                <div class="umschlag-links"></div>
+                <div class="umschlag-rechts"></div>
+                <div class="umschlag-unten"></div>
+
+                <div class="umschlag-klappe"></div>
+
+                <div class="siegel">
+                    <span>♥</span>
+                </div>
+
+            </div>
+        </button>
+
+        <p class="brief-hinweis">
+            <span>♥</span> Klickt auf den Brief, um ihn zu öffnen
+        </p>
+
+    </section>
+
+
+    <!-- EIGENTLICHE HOCHZEITSSEITE -->
+    <main id="hochzeitsseite" hidden>
+
+        <!-- HEADER -->
+        <header class="seiten-header">
+
+            <div class="logo">
+                Julia <span>&</span> Marc
+            </div>
+
+            <nav>
+                <span>Start</span>
+                <span>Unsere Geschichte</span>
+                <span>Die Hochzeit</span>
+                <span>Tagesablauf</span>
+                <span>Location</span>
+                <span>Rückmeldung</span>
+            </nav>
+
+        </header>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-rahmen">
+
+                <p class="hero-klein">
+                    WIR LADEN EUCH HERZLICH EIN
+                </p>
+
+                <h1>
+                    Julia <span>&</span> Marc
+                </h1>
+
+                <div class="herz-linie">
+                    <span></span>
+                    ♥
+                    <span></span>
+                </div>
+
+                <p class="hero-text">
+                    Wir sagen Ja!
+                </p>
+
+                <p class="hero-datum">
+                    16. August 2027
+                </p>
+
+                <div class="hero-bild">
+                    <img
+                        src="./assets/img/julia-marc.webp"
+                        alt="Julia und Marc"
+                    >
+                </div>
+
+                <p class="hero-begruessung">
+                    Wir freuen uns darauf, diesen besonderen
+                    Tag mit euch zu feiern.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PLATZHALTER FÜR WEITERE INHALTE -->
+        <section class="platzhalter-bereich">
+
+            <div class="platzhalter">
+                <span>01</span>
+                <h2>Unsere Geschichte</h2>
+                <p>Hier erzählen wir später unsere Geschichte.</p>
+            </div>
+
+            <div class="platzhalter">
+                <span>02</span>
+                <h2>Die Hochzeit</h2>
+                <p>Hier findet ihr später alle Informationen.</p>
+            </div>
+
+            <div class="platzhalter">
+                <span>03</span>
+                <h2>Der Tagesablauf</h2>
+                <p>Hier folgt später unser gemeinsamer Tagesplan.</p>
+            </div>
+
+            <div class="platzhalter">
+                <span>04</span>
+                <h2>Die Location</h2>
+                <p>Hier ergänzen wir später den Veranstaltungsort.</p>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Mit Liebe gestaltet – Julia & Marc ♥</p>
+        </footer>
+
+    </main>
+
+
+   <script src="./js/startseite.js"></script>
+</body>
+</html>

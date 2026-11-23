@@ -1,95 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
+  <head>
     <!-- Grundlegende Einstellungen -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
-    <title>SEITENTITEL – Marc & Julia</title>
+    <title>Marc & Julia – Unsere Hochzeit</title>
 
     <meta
-        name="description"
-        content="BESCHREIBUNG DER SEITE"
-    >
+      name="description"
+      content="Wir laden euch herzlich ein, unsere Hochzeit am 16. August 2027 mit uns zu feiern."
+    />
 
-    <meta name="author" content="Ralph Koch">
-    <meta name="robots" content="index, follow">
+    <meta name="author" content="Ralph Koch" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Canonical URL -->
-    <link
-        rel="canonical"
-        href="https://DEINE-DOMAIN.de/SEITENNAME.html"
-    >
+    <link rel="canonical" href="https://hochzeit-julia-marc.de/" />
 
     <!-- Favicon -->
-    <link
-        rel="icon"
-        type="image/svg+xml"
-        href="./assets/icons/favicon.svg"
-    >
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="SEITENTITEL – Marc & Julia">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marc & Julia – Unsere Hochzeit" />
     <meta
-        property="og:description"
-        content="BESCHREIBUNG DER SEITE"
-    >
+      property="og:description"
+      content="Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern."
+    />
+    <meta property="og:url" content="https://hochzeit-julia-marc.de/" />
     <meta
-        property="og:url"
-        content="https://DEINE-DOMAIN.de/SEITENNAME.html"
-    >
-    <meta
-        property="og:image"
-        content="https://DEINE-DOMAIN.de/assets/img/hochzeit-preview.jpg"
-    >
-    <meta property="og:site_name" content="Marc & Julia Hochzeit">
+      property="og:image"
+      content="https://hochzeit-julia-marc.de/assets/img/hochzeit-preview.jpg"
+    />
+    <meta property="og:site_name" content="Marc & Julia Hochzeit" />
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SEITENTITEL – Marc & Julia">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marc & Julia – Unsere Hochzeit" />
     <meta
-        name="twitter:description"
-        content="BESCHREIBUNG DER SEITE"
-    >
+      name="twitter:description"
+      content="Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern."
+    />
     <meta
-        name="twitter:image"
-        content="https://DEINE-DOMAIN.de/assets/img/hochzeit-preview.jpg"
-    >
+      name="twitter:image"
+      content="https://hochzeit-julia-marc.de/assets/img/hochzeit-preview.jpg"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body onload="init()">
-    
+  <body onload="init()">
+    <!-- =================================
+         BRIEFUMSCHLAG
+    ================================== -->
 
-   
-<div id="header"></div>
+    <section id="briefStart" class="brief-start">
+      <div class="brief-einleitung">
+        <p>Eine besondere Einladung</p>
 
-    <main id="content"></main>
+        <h1>Für euch von Herzen</h1>
 
-  <div id="location"></div>
+        <span>Wir haben eine Überraschung für euch ...</span>
+      </div>
 
-    <div id="footer"></div>
+      <button
+        type="button"
+        id="briefOeffnen"
+        class="umschlag-button"
+        aria-label="Hochzeitseinladung öffnen"
+      >
+        <div class="umschlag">
+          <div class="umschlag-inhalt"></div>
 
+          <div class="einladungskarte">
+            <p>WIR LADEN EUCH HERZLICH EIN</p>
+            <h2>Julia <span>&</span> Marc</h2>
+            <div class="karten-herz">♥</div>
+            <p class="karten-datum">16. August 2027</p>
+          </div>
 
+          <div class="umschlag-links"></div>
 
+          <div class="umschlag-rechts"></div>
 
+          <div class="umschlag-unten"></div>
 
+          <div class="umschlag-klappe"></div>
 
-   
-<script src="./js/db.js"></script>
-<script src="./js/template.js"></script>
-<script src="./js/script.js"></script>
-    
-    
+          <div class="siegel">
+            <span>♥</span>
+          </div>
+        </div>
+      </button>
 
+      <p class="brief-hinweis">
+        <span>♥</span>
+        Klickt auf den Brief, um ihn zu öffnen
+      </p>
+    </section>
 
+    <!-- =================================
+         BISHERIGE HOCHZEITSSEITE
+    ================================== -->
 
+    <div id="hochzeitsseite" hidden>
+      <div id="header"></div>
 
+      <main id="content"></main>
 
-</body>
+      <div id="location"></div>
+
+      <div id="footer"></div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/db.js"></script>
+
+    <script src="./js/template.js"></script>
+
+    <script src="./js/script.js"></script>
+
+    <script src="./js/startseite.js"></script>
+  </body>
 </html>

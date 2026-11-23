@@ -1,3 +1,4 @@
+
 /* ======================================
    ALLGEMEIN
 ====================================== */
@@ -415,21 +416,23 @@ body {
     width: 100%;
     min-width: 750px;
     border-collapse: collapse;
+    border: 1px solid #e5d6ca;
 }
 
 .tabelle-container th,
 .tabelle-container td {
     text-align: left;
-    padding: 15px 12px;
-    border-bottom: 1px solid #eadfd4;
+    padding: 14px 12px;
+    border: 1px solid #e5d6ca;
     font-size: 14px;
     vertical-align: top;
 }
 
 .tabelle-container th {
-    background-color: #f8f3ed;
+    background-color: #f3eae2;
     color: #8b1e2d;
     font-weight: bold;
+    border-color: #dfcfc2;
 }
 
 .tabelle-container td {
@@ -438,8 +441,20 @@ body {
     line-height: 1.6;
 }
 
-.tabelle-container tbody tr:hover {
+/* Abwechselnde Zeilenfarben */
+
+.tabelle-container tbody tr:nth-child(even) {
     background-color: #faf6f1;
+}
+
+.tabelle-container tbody tr:nth-child(odd) {
+    background-color: #fffdf9;
+}
+
+/* Hover-Effekt */
+
+.tabelle-container tbody tr:hover {
+    background-color: #f2e7dd;
 }
 
 /* ======================================
@@ -622,7 +637,8 @@ body {
         min-width: 0;
     }
 
-    /* Auf dem Smartphone Karten statt der breiten Tabelle anzeigen */
+    /* Auf dem Smartphone Karten statt der Tabelle */
+
     .tabelle-container {
         display: none;
     }
@@ -653,6 +669,10 @@ body {
     }
 }
 
+/* ======================================
+   BEARBEITEN-BUTTON
+====================================== */
+
 .gast-bearbeiten-button {
     margin-top: 8px;
     padding: 7px 12px;
@@ -673,3 +693,435 @@ body {
     margin-top: 16px;
     padding: 11px;
 }
+
+/* ======================================
+   BEARBEITUNGSFENSTER
+====================================== */
+
+.bearbeiten-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(40, 25, 25, 0.60);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bearbeiten-overlay.aktiv {
+    display: flex !important;
+}
+
+.bearbeiten-fenster {
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffdf9;
+    border: 1px solid #eadfd4;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* Kopfbereich */
+
+.bearbeiten-kopf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eadfd4;
+}
+
+.bearbeiten-kopf h2 {
+    color: #8b1e2d;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin: 0;
+}
+
+#bearbeitenSchliessen {
+    border: none;
+    background: none;
+    color: #8b1e2d;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Eingabefelder */
+
+.bearbeiten-feld {
+    margin-bottom: 20px;
+}
+
+.bearbeiten-feld label {
+    display: block;
+    margin-bottom: 8px;
+    color: #514747;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.bearbeiten-feld input,
+.bearbeiten-feld select,
+.bearbeiten-feld textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d8c8bd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #3c3030;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bearbeiten-feld input:focus,
+.bearbeiten-feld select:focus,
+.bearbeiten-feld textarea:focus {
+    border-color: #8b1e2d;
+    box-shadow: 0 0 0 3px rgba(139, 30, 45, 0.10);
+}
+
+.bearbeiten-feld textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Aktionen */
+
+.bearbeiten-aktionen {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eadfd4;
+}
+
+.bearbeiten-aktionen button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#bearbeitenAbbrechen {
+    background: #f0e5d9;
+    color: #514747;
+}
+
+#bearbeitenAbbrechen:hover {
+    background: #e6d5c5;
+}
+
+#bearbeitenSpeichern {
+    background: #8b1e2d;
+    color: #ffffff;
+}
+
+#bearbeitenSpeichern:hover {
+    background: #701724;
+}
+
+#bearbeitenSpeichern:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Fehlermeldung */
+
+.bearbeiten-fehler {
+    color: #b42318;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Kleinere Bildschirme */
+
+@media (max-width: 600px) {
+    .bearbeiten-overlay {
+        padding: 12px;
+    }
+
+    .bearbeiten-fenster {
+        padding: 22px;
+    }
+
+    .bearbeiten-kopf h2 {
+        font-size: 23px;
+    }
+
+    .bearbeiten-aktionen {
+        flex-direction: column;
+    }
+
+    .bearbeiten-aktionen button {
+        width: 100%;
+    }
+}
+
+
+/* Erwachsenenbereich im Bearbeitungsfenster */
+
+.bearbeiten-personen {
+    margin: 25px 0 30px;
+}
+
+.bearbeiten-personen h3 {
+    color: #514747;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+
+.erwachsenen-zeile {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.erwachsenen-zeile input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid #d8c8bd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #3c3030;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.erwachsenen-zeile input:focus {
+    border-color: #8b1e2d;
+    box-shadow: 0 0 0 3px rgba(139, 30, 45, 0.10);
+}
+
+.erwachsenen-loeschen {
+    width: 100%;
+    background-color: #8b1e2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.erwachsenen-loeschen:hover {
+    background-color: #681522;
+}
+
+.erwachsenen-hinzufuegen {
+    background-color: #f3eae2;
+    color: #8b1e2d;
+    border: 1px solid #dfcfc2;
+    border-radius: 6px;
+    padding: 11px 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.erwachsenen-hinzufuegen:hover {
+    background-color: #eadbd0;
+}
+
+@media (max-width: 600px) {
+    .erwachsenen-zeile {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+.bearbeiten-personen {
+    margin: 0 0 20px;
+}
+
+.erwachsenen-hinzufuegen {
+    margin-bottom: 20px;
+}
+
+
+
+/* Kinderbereich im Bearbeitungsfenster */
+
+.kind-bearbeiten {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f8f3ed;
+    border: 1px solid #eadfd4;
+    border-radius: 7px;
+}
+
+.kind-eingaben {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+
+.kind-eingaben label {
+    display: block;
+    margin-bottom: 8px;
+    color: #514747;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.kind-eingaben input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 13px 15px;
+    border: 1px solid #d8c8bd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #3c3030;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.kind-kostenpflichtig {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 15px 0;
+    color: #514747;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.kind-kostenpflichtig input {
+    width: 17px;
+    height: 17px;
+    accent-color: #8b1e2d;
+    cursor: pointer;
+}
+
+.kind-loeschen {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background: #8b1e2d;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.kind-loeschen:hover {
+    background: #681522;
+}
+
+@media (max-width: 600px) {
+    .kind-eingaben {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Neue Kinder hinzufügen */
+.kind-neu-eingabe {
+    margin-top: 12px;
+}
+
+.kind-neu-eingabe .kind-eingaben {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 10px;
+    align-items: end;
+}
+
+.kind-hinzufuegen {
+    width: 100%;
+    background-color: #8b1e2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 13px 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.kind-hinzufuegen:hover {
+    background-color: #681522;
+}
+
+/* Bereits hinzugefügte Kinder */
+.kind-bearbeiten {
+    margin-bottom: 12px;
+}
+
+.kind-bearbeiten .kind-eingaben {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 10px;
+    align-items: end;
+}
+
+.kind-loeschen {
+    width: 100%;
+    background-color: #8b1e2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 13px 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.kind-loeschen:hover {
+    background-color: #681522;
+}
+
+@media (max-width: 600px) {
+    .kind-neu-eingabe .kind-eingaben,
+    .kind-bearbeiten .kind-eingaben {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .kind-hinzufuegen,
+    .kind-loeschen {
+        grid-column: 1 / -1;
+    }
+}
+
+
+
+/* Hintergrund für die Kinder-Einträge */
+.kind-bearbeiten {
+    background-color: #f3eae2;
+    border: 1px solid #eadbd0;
+    border-radius: 7px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+
+/* Hintergrund für den Bereich Neues Kind hinzufügen */
+.kind-neu-eingabe {
+    background-color: #f3eae2;
+    border: 1px solid #dddddd;
+    border-radius: 7px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+
+

@@ -1,0 +1,579 @@
+
+/* =================================
+   GRUNDEINSTELLUNGEN
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8f3ed;
+    color: #3c3030;
+    font-family: Arial, sans-serif;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =================================
+   BRIEFUMSCHLAG STARTSEITE
+================================= */
+
+.brief-start {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf9 0%,
+            #f8f3ed 65%,
+            #eee3d9 100%
+        );
+}
+
+.brief-einleitung {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.brief-einleitung p {
+    color: #c6a15b;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.brief-einleitung h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: normal;
+    color: #8b1e2d;
+    margin-bottom: 15px;
+}
+
+.brief-einleitung span {
+    color: #766763;
+    font-size: 15px;
+}
+
+
+/* =================================
+   UMSCHLAG
+================================= */
+
+.umschlag-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    perspective: 1200px;
+}
+
+.umschlag {
+    position: relative;
+    width: min(480px, 82vw);
+    height: 290px;
+    background: #f5e9dc;
+    border: 1px solid #d9c4a8;
+    box-shadow: 0 20px 45px rgba(60, 35, 30, 0.18);
+    border-radius: 4px;
+    transition: transform 0.5s ease;
+}
+
+.umschlag-inhalt {
+    position: absolute;
+    inset: 0;
+    background: #fffaf2;
+}
+
+.umschlag-links {
+    position: absolute;
+    inset: 0;
+    background: #ead8c5;
+    clip-path: polygon(0 0, 50% 58%, 0 100%);
+    z-index: 2;
+}
+
+.umschlag-rechts {
+    position: absolute;
+    inset: 0;
+    background: #f0dfcd;
+    clip-path: polygon(100% 0, 50% 58%, 100% 100%);
+    z-index: 2;
+}
+
+.umschlag-unten {
+    position: absolute;
+    inset: 0;
+    background: #e7d2bd;
+    clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+    z-index: 3;
+}
+
+
+/* =================================
+   BRIEFKLAPPE
+================================= */
+
+.umschlag-klappe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: #f3e3d1;
+
+    clip-path: polygon(0 0, 100% 0, 50% 58%);
+
+    transform-origin: top center;
+    transform: rotateX(0deg);
+
+    transition:
+        transform 1.8s cubic-bezier(0.65, 0, 0.35, 1);
+
+    backface-visibility: hidden;
+
+    z-index: 5;
+}
+
+
+/* =================================
+   GOLDENES SIEGEL
+================================= */
+
+.siegel {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 50%;
+    top: 56%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background: #8b1e2d;
+    border: 3px solid #c6a15b;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f8e9d4;
+    font-size: 28px;
+
+    z-index: 6;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* =================================
+   UMSCHLAG ÖFFNEN
+================================= */
+
+.umschlag-button:hover .umschlag {
+    transform: translateY(-5px);
+}
+
+.umschlag-button.geoeffnet .umschlag-klappe {
+    transform: rotateX(180deg);
+}
+
+.umschlag-button.geoeffnet .siegel {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+}
+
+.umschlag-button:disabled {
+    cursor: default;
+}
+
+
+/* =================================
+   HINWEIS UNTER DEM BRIEF
+================================= */
+
+.brief-hinweis {
+    color: #8b1e2d;
+    margin-top: 45px;
+    font-size: 14px;
+}
+
+.brief-hinweis span {
+    color: #c6a15b;
+}
+
+
+/* =================================
+   HOCHZEITSSEITE EINBLENDEN
+================================= */
+
+#hochzeitsseite {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#hochzeitsseite.seite-sichtbar {
+    opacity: 1;
+}
+
+
+/* =================================
+   HOCHZEITSSEITE
+================================= */
+
+.seiten-header {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 6%;
+    background: #fffdf9;
+    border-bottom: 1px solid #eaded2;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    color: #8b1e2d;
+}
+
+.logo span {
+    color: #c6a15b;
+}
+
+.seiten-header nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.seiten-header nav span {
+    color: #594947;
+    font-size: 13px;
+    cursor: default;
+}
+
+
+/* =================================
+   HERO BEREICH
+================================= */
+
+.hero {
+    padding: 65px 20px;
+    text-align: center;
+    background:
+        linear-gradient(
+            rgba(248, 243, 237, 0.8),
+            rgba(248, 243, 237, 0.95)
+        );
+}
+
+.hero-rahmen {
+    max-width: 1000px;
+    margin: auto;
+    padding: 45px 25px;
+    border: 1px solid #d8c5a6;
+    background: #fffdf9;
+}
+
+.hero-klein {
+    color: #c6a15b;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: #8b1e2d;
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 8vw, 85px);
+    font-weight: normal;
+}
+
+.hero h1 span {
+    color: #c6a15b;
+}
+
+.herz-linie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #8b1e2d;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.herz-linie span {
+    width: 55px;
+    height: 1px;
+    background: #c6a15b;
+}
+
+.hero-text {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #8b1e2d;
+    margin-top: 15px;
+}
+
+.hero-datum {
+    color: #766763;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+.hero-bild {
+    max-width: 750px;
+    margin: 35px auto 25px;
+}
+
+.hero-bild img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.hero-begruessung {
+    max-width: 550px;
+    margin: 25px auto 0;
+    color: #594947;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   PLATZHALTER
+================================= */
+
+.platzhalter-bereich {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.platzhalter {
+    padding: 40px 25px;
+    text-align: center;
+    background: #fffdf9;
+    border: 1px solid #eaded2;
+}
+
+.platzhalter span {
+    color: #c6a15b;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.platzhalter h2 {
+    color: #8b1e2d;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.platzhalter p {
+    color: #766763;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #8b1e2d;
+    color: #fffdf9;
+    font-family: Georgia, serif;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 700px) {
+
+    .umschlag {
+        height: 210px;
+    }
+
+    .seiten-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .seiten-header nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .platzhalter-bereich {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-rahmen {
+        padding: 35px 15px;
+    }
+
+}
+
+
+/* =================================
+   BEWEGUNG REDUZIEREN
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .umschlag-klappe,
+    .siegel,
+    #hochzeitsseite {
+        transition-duration: 0.01ms;
+    }
+
+}
+
+/* =================================
+   EINLADUNGSKARTE
+================================= */
+
+.umschlag {
+    overflow: visible;
+    transform-style: preserve-3d;
+}
+
+.einladungskarte {
+    position: absolute;
+    z-index: 1;
+
+    width: 88%;
+    height: 240px;
+    left: 6%;
+    bottom: 15px;
+
+    background: #fffdf9;
+    border: 1px solid #c6a15b;
+
+    box-shadow: 0 5px 20px rgba(60, 35, 30, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(0);
+
+    transition:
+        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s ease;
+}
+
+.einladungskarte > p:first-child {
+    color: #c6a15b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.einladungskarte h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
+    color: #8b1e2d;
+    margin: 15px 0;
+}
+
+.einladungskarte h2 span {
+    color: #c6a15b;
+}
+
+.karten-herz {
+    color: #8b1e2d;
+    font-size: 25px;
+}
+
+.einladungskarte .karten-datum {
+    color: #766763;
+    margin-top: 12px;
+    letter-spacing: 2px;
+}
+
+/* =================================
+   UMSCHLAG AUSEINANDERBEWEGEN
+================================= */
+
+/* Obere Klappe öffnen */
+.umschlag-button.geoeffnet .umschlag-klappe {
+    transform: rotateX(180deg);
+}
+
+/* Karte nach oben herausziehen */
+.umschlag-button.brief-auseinander .einladungskarte {
+    opacity: 1;
+    transform: translateY(-185px);
+}
+
+/* Seitenteile bewegen */
+.umschlag-links,
+.umschlag-rechts,
+.umschlag-unten {
+    transition:
+        transform 1.8s ease-in-out,
+        opacity 1.8s ease-in-out;
+}
+
+.umschlag-button.brief-auseinander .umschlag-links {
+    transform: translateX(-120px);
+    opacity: 0;
+}
+
+.umschlag-button.brief-auseinander .umschlag-rechts {
+    transform: translateX(120px);
+    opacity: 0;
+}
+
+.umschlag-button.brief-auseinander .umschlag-unten {
+    transform: translateY(130px);
+    opacity: 0;
+}
+
+/* Siegel verschwinden lassen */
+.umschlag-button.brief-auseinander .siegel {
+    opacity: 0;
+}
+
+.brief-start.brief-verschwindet {
+    opacity: 0;
+    transition: opacity 1s ease;
+}

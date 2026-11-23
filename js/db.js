@@ -52,8 +52,9 @@ window.firebaseReady = (async function () {
         getDatabase,
         ref,
         push,
-        serverTimestamp,
-        get
+        get,
+        update,
+        serverTimestamp
     } = await import(`${base}/firebase-database.js`);
 
     // Firebase Authentifizierung
@@ -123,6 +124,7 @@ window.firebaseReady = (async function () {
         ref,
         push,
         get,
+        update,
         serverTimestamp,
 
         onAuthStateChanged,
