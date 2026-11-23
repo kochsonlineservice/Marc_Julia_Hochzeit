@@ -492,8 +492,8 @@ footer {
     text-align: center;
     padding: 20px;
 
-    opacity: 0;
-    transform: translateY(0);
+   opacity: 1;
+    transform: translateY(-35px);
 
     transition:
         transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
@@ -576,4 +576,52 @@ footer {
 .brief-start.brief-verschwindet {
     opacity: 0;
     transition: opacity 1s ease;
+}
+
+/* Innenfutter des Briefumschlags */
+.umschlag-inhalt {
+    background: #F8F3ED;
+    overflow: hidden;
+}
+
+.umschlag-futter {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #C6A15B;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(198, 161, 91, 0.25) 0 2px,
+            transparent 3px
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(198, 161, 91, 0.25) 0 2px,
+            transparent 3px
+        ),
+        #8B1E2D;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.monogramm {
+    color: #F8F3ED;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+.monogramm span {
+    color: #C6A15B;
+    font-style: italic;
+}
+
+.futter-herz {
+    color: #C6A15B;
+    font-size: 20px;
 }
