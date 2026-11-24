@@ -1,0 +1,232 @@
+
+/* =================================
+   HERO – STARTBEREICH
+================================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 40px;
+    background-color: #F8F3ED;
+    display: flex;
+    align-items: center;
+}
+
+.hero .hero-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+}
+
+/* TEXT LINKS */
+
+.hero-text {
+    text-align: center;
+    color: #8B1E2D;
+}
+
+.hero-einladung {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: #8B1E2D;
+    margin-bottom: 0;
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(90px, 10vw, 150px);
+    font-weight: normal;
+    line-height: 1.1;
+    color: #8B1E2D;
+    margin: 0;
+}
+
+.hero-namen {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #C6A15B;
+    margin-top: 20px;
+}
+
+.hero-datum {
+    font-size: 19px;
+    letter-spacing: 2px;
+    color: #766763;
+    margin-top: 20px;
+}
+
+/* BUTTON */
+
+.hero-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 32px;
+
+    background-color: #8B1E2D;
+    color: #FFFFFF;
+
+    border: 1px solid #8B1E2D;
+    border-radius: 4px;
+
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #C6A15B;
+    border-color: #C6A15B;
+    color: #FFFFFF;
+}
+
+/* BILD RECHTS */
+
+.hero-bild {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero-bild img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    border: 8px solid #FFFDF9;
+    border-radius: 4px;
+    box-shadow: 0 12px 35px rgba(60, 35, 30, 0.15);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+        padding: 55px 20px;
+    }
+
+    .hero .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-einladung {
+        font-size: 28px;
+    }
+
+    .hero-text h1 {
+        font-size: 90px;
+    }
+
+    .hero-namen {
+        font-size: 27px;
+    }
+
+    .hero-bild {
+        max-width: 550px;
+    }
+
+    .hero-bild img {
+        height: auto;
+        max-height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 40px 16px;
+    }
+
+    .hero-text h1 {
+        font-size: 75px;
+    }
+
+    .hero-namen {
+        font-size: 24px;
+    }
+
+    .hero-datum {
+        font-size: 16px;
+    }
+
+    .hero-button {
+        margin-top: 25px;
+    }
+}
+
+
+/* Alte Hero-Einstellungen überschreiben */
+
+.hero {
+    text-align: left;
+}
+
+.hero .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+}
+
+
+/* =================================
+   HERO – ALTE REGELN ÜBERSCHREIBEN
+================================= */
+
+.hero {
+    text-align: left;
+}
+
+.hero .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+}
+
+.hero .hero-text {
+    margin-top: 0;
+}
+
+.hero .hero-bild {
+    margin: 0 auto;
+}
+
+
+/* MOBILE HERO VERBESSERUNG */
+
+@media (max-width: 800px) {
+
+    .hero .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-bild {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .hero-bild img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .hero-button {
+        min-width: 180px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}

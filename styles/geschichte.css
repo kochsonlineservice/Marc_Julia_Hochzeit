@@ -1,0 +1,94 @@
+
+/* =================================
+   UNSERE GESCHICHTE
+================================= */
+
+.geschichte {
+    padding: 90px 40px;
+    background-color: #FFFDF9;
+    text-align: center;
+}
+
+.geschichte-intro {
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.geschichte-klein {
+    color: #C6A15B;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.geschichte h2 {
+    color: #8B1E2D;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.geschichte-deko {
+    width: 70px;
+    height: 2px;
+    background-color: #C6A15B;
+    margin: 0 auto 25px;
+}
+
+.geschichte-intro p:last-child {
+    color: #766763;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* BILDER */
+
+.geschichte-bilder {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.geschichte-karte {
+    background-color: #F8F3ED;
+    padding: 12px;
+    border: 1px solid #E8DCCB;
+}
+
+.geschichte-karte img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.geschichte-karte h3 {
+    color: #8B1E2D;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 20px 0 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+    .geschichte {
+        padding: 65px 20px;
+    }
+
+    .geschichte-bilder {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 25px;
+    }
+
+    .geschichte-karte img {
+        height: auto;
+        max-height: 350px;
+    }
+}
