@@ -1,51 +1,47 @@
+
 function init() {
     renderHeader();
     renderMain();
-    renderSchedule();
-    renderFooter();
     renderLocation();
+    renderFooter();
 }
+
+
+// =========================
+// HEADER
+// =========================
 
 function renderHeader() {
-    document.getElementById("header").innerHTML = getHeaderTemplate();
+    document.getElementById("header").innerHTML =
+        getHeaderTemplate();
 }
 
 
-function renderMain(){
-    document.getElementById("content").innerHTML = getMainTemplate();
+// =========================
+// HAUPTINHALT
+// =========================
+
+function renderMain() {
+    document.getElementById("content").innerHTML =
+        getMainTemplate();
 }
 
 
-function renderSchedule(){
-
-
-
-for (let index = 0; index < weddingSchedule.length; index++) {
-    
-  const schedule = weddingSchedule[index];
-
-
-  document.getElementById("ablauf").innerHTML +=  
-  `
-
-  <p class="ablauf">
-    <span class="ablauf-zeit">${schedule.time}</span>
-    <span class="ablauf-event">${schedule.event}</span>
-</p>
-  
-  `    ;
-}
-}
-
+// =========================
+// LOCATION
+// =========================
 
 function renderLocation() {
-    document.getElementById("location").innerHTML = getLocationTemplate();
+    document.getElementById("location").innerHTML =
+        getLocationTemplate();
 }
 
 
+// =========================
+// FOOTER
+// =========================
 
 function renderFooter() {
-    document.getElementById("footer").innerHTML = getFooterTemplate();
+    document.getElementById("footer").innerHTML =
+        getFooterTemplate();
 }
-
-

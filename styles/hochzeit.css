@@ -1,0 +1,102 @@
+
+/* =================================
+   UNSERE HOCHZEIT
+================================= */
+
+.hochzeit {
+    padding: 90px 40px;
+    background-color: #F8F3ED;
+    text-align: center;
+}
+
+.hochzeit-intro {
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+.hochzeit-klein {
+    color: #C6A15B;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.hochzeit h2 {
+    color: #8B1E2D;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.hochzeit-deko {
+    width: 70px;
+    height: 2px;
+    background-color: #C6A15B;
+    margin: 0 auto 25px;
+}
+
+.hochzeit-intro p:last-child {
+    color: #766763;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* INFORMATIONS-KARTEN */
+
+.hochzeit-infos {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.hochzeit-info {
+    padding: 40px 25px;
+    background-color: #FFFDF9;
+    border: 1px solid #E8DCCB;
+    box-shadow: 0 8px 25px rgba(60, 35, 30, 0.06);
+}
+
+.hochzeit-icon {
+    display: block;
+    color: #C6A15B;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hochzeit-info h3 {
+    color: #8B1E2D;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.hochzeit-info p {
+    color: #766763;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .hochzeit {
+        padding: 65px 20px;
+    }
+
+    .hochzeit-infos {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 20px;
+    }
+
+    .hochzeit-info {
+        padding: 30px 20px;
+    }
+
+}

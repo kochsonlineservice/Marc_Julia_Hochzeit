@@ -1,435 +1,298 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Rückmeldung – Marc & Julia</title>
 
     <meta
-        name="description"
-        content="Rückmeldung zur Hochzeit von Marc & Julia am 16. August 2027."
-    >
+      name="description"
+      content="Rückmeldung zur Hochzeit von Marc & Julia am 16. August 2027."
+    />
 
-    <meta name="author" content="Ralph Koch">
-    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="Ralph Koch" />
+    <meta name="robots" content="noindex, follow" />
 
-    <link
-        rel="icon"
-        type="image/svg+xml"
-        href="./assets/icons/favicon.svg"
-    >
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
 
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/rueckmeldung.css" />
+  </head>
 
-<body>
-
+  <body>
     <main class="rueckmeldung-page">
+      <!-- EINLEITUNG -->
 
-        <!-- EINLEITUNG -->
+      <section class="rueckmeldung-header">
+        <h1>Rückmeldung zur Hochzeit</h1>
 
-        <section class="rueckmeldung-header">
+        <p>Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern!</p>
 
-            <h1>Rückmeldung zur Hochzeit</h1>
+        <p class="hochzeitsdatum">Marc & Julia – 16. August 2027</p>
+      </section>
 
-            <p>
-                Wir freuen uns darauf, diesen besonderen Tag
-                mit euch zu feiern!
-            </p>
+      <!-- ANMELDEFORMULAR -->
 
-            <p class="hochzeitsdatum">
-                Marc & Julia – 16. August 2027
-            </p>
+      <section class="anmeldung">
+        <form id="anmeldeformular">
+          <!-- SCHRITT 1 -->
 
-        </section>
+          <div id="anmeldeSchritt1">
+            <h2>Wer ist dabei?</h2>
 
+            <!-- TEILNAHME -->
 
-        <!-- ANMELDEFORMULAR -->
+            <div class="form-group">
+              <p class="form-label">Könnt ihr dabei sein?</p>
 
-        <section class="anmeldung">
+              <label class="radio-option">
+                <input type="radio" name="teilnahme" value="ja" required />
+                Ja, wir kommen gerne!
+              </label>
 
-            <form id="anmeldeformular">
-
-                <!-- SCHRITT 1 -->
-
-                <div id="anmeldeSchritt1">
-
-                    <h2>Wer ist dabei?</h2>
-
-                    <!-- TEILNAHME -->
-
-                    <div class="form-group">
-
-                        <p class="form-label">
-                            Könnt ihr dabei sein?
-                        </p>
-
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="teilnahme"
-                                value="ja"
-                                required
-                            >
-                            Ja, wir kommen gerne!
-                        </label>
-
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="teilnahme"
-                                value="nein"
-                                required
-                            >
-                            Leider können wir nicht kommen.
-                        </label>
-
-                    </div>
-
-
-                    <!-- FAMILIENNAME -->
-
-                    <div class="form-group">
-
-                        <label for="familienname">
-                            Familienname *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="familienname"
-                            name="familienname"
-                            placeholder="z. B. Familie Müller"
-                            required
-                        >
-
-                        <p
-                            id="familiennameHinweis"
-                            class="formular-hinweis"
-                            hidden
-                        >
-                            Bitte gib zuerst deinen Familiennamen ein.
-                        </p>
-
-                    </div>
-
-
-                    <!-- TEILNAHMEBEREICH -->
-
-                    <div id="teilnahmeBereich" style="display: none;">
-
-                        <!-- ERWACHSENE -->
-
-                        <div class="form-group">
-
-                            <label for="anzahlErwachsene">
-                                Anzahl Erwachsene
-                            </label>
-
-                            <input
-                                type="number"
-                                id="anzahlErwachsene"
-                                name="anzahlErwachsene"
-                                min="1"
-                                max="20"
-                                value="1"
-                                required
-                                disabled
-                            >
-
-                        </div>
-
-                        <div id="erwachseneContainer"></div>
-
-
-                        <!-- KINDER -->
-
-                        <div class="form-group">
-
-                            <label for="anzahlKinder">
-                                Anzahl Kinder
-                            </label>
-
-                            <input
-                                type="number"
-                                id="anzahlKinder"
-                                name="anzahlKinder"
-                                min="0"
-                                max="20"
-                                value="0"
-                                required
-                                disabled
-                            >
-
-                        </div>
-
-                        <div id="kinderContainer"></div>
-
-
-                        <!-- NACHRICHT -->
-
-                        <div class="form-group">
-
-                            <label for="nachricht">
-                                Nachricht an Marc & Julia
-                            </label>
-
-                            <textarea
-                                id="nachricht"
-                                name="nachricht"
-                                rows="4"
-                                placeholder="Möchtet ihr uns noch etwas mitteilen?"
-                                disabled
-                            ></textarea>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- WEITER ZUR ESSEN AUSWAHL -->
-
-                    <div class="form-group">
-
-                        <button
-                            type="button"
-                            id="weiterZuEssen"
-                            class="absenden-button"
-                            disabled
-                        >
-                            Essen Auswahl
-                        </button>
-
-                    </div>
-
-
-                    <!-- ABSAGE: BUTTON ZUNÄCHST VERBORGEN -->
-
-                    <div class="form-group">
-
-                        <button
-                            type="submit"
-                            id="absageAbsenden"
-                            class="absenden-button"
-                            disabled
-                            hidden
-                        >
-                            Rückmeldung absenden
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SCHRITT 2: BUFFET -->
-
-                <div id="anmeldeSchritt2" hidden>
-
-                    <div class="buffet-bereich">
-
-                        <h2>Unser Hochzeitsbuffet</h2>
-
-                        <p class="buffet-ueberschrift">
-                            BUFFET
-                        </p>
-
-                        <p>
-                            Für unseren Hochzeitstag haben wir ein
-                            leckeres Buffet für euch geplant.
-                        </p>
-
-                        <p>
-                            Damit wir die Verpflegung gut planen können,
-                            gebt uns bitte an, wie viele Personen
-                            veganes oder vegetarisches Essen benötigen.
-                        </p>
-
-                    </div>
-
-
-                    <!-- VEGAN -->
-
-                    <div class="form-group buffet-eingabe">
-
-                        <label for="anzahlVegan">
-                            Anzahl vegan
-                        </label>
-
-                        <input
-                            type="number"
-                            id="anzahlVegan"
-                            name="anzahlVegan"
-                            min="0"
-                            value="0"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- VEGETARISCH -->
-
-                    <div class="form-group buffet-eingabe">
-
-                        <label for="anzahlVegetarisch">
-                            Anzahl vegetarisch
-                        </label>
-
-                        <input
-                            type="number"
-                            id="anzahlVegetarisch"
-                            name="anzahlVegetarisch"
-                            min="0"
-                            value="0"
-                            required
-                        >
-
-                    </div>
-
-
-                    <p class="buffet-hinweis">
-                        Alle übrigen Gäste werden automatisch
-                        für das normale Buffet eingeplant.
-                    </p>
-
-                    <p
-                        id="buffetFehler"
-                        class="formular-hinweis"
-                        hidden
-                    >
-                        Die Anzahl veganer und vegetarischer Personen
-                        darf die Gesamtzahl der Gäste nicht überschreiten.
-                    </p>
-
-
-                    <!-- ZURÜCK -->
-
-                    <div class="form-group">
-
-                        <button
-                            type="button"
-                            id="zurueckZuGaesten"
-                            class="absenden-button"
-                        >
-                            Zurück
-                        </button>
-
-                    </div>
-
-
-                    <!-- ENDGÜLTIG ABSENDEN -->
-
-                    <div class="form-group">
-
-                        <button
-                            type="submit"
-                            id="finalAbsenden"
-                            class="absenden-button"
-                        >
-                            Anmeldung absenden
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </form>
-
-        </section>
-
-
-        <!-- ABSAGE-DIALOG -->
-
-        <div
-            id="absageDialog"
-            class="absage-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="absageTitel"
-        >
-
-            <div class="absage-inhalt">
-
-                <img
-                    src="./assets/img/julia-marc.webp"
-                    alt="Marc und Julia"
-                >
-
-                <h2 id="absageTitel">Wie schade!</h2>
-
-                <p>
-                    Schade, dass ihr an unserem besonderen Tag
-                    nicht dabei sein könnt.
-                </p>
-
-                <p>
-                    Wir denken trotzdem an euch und senden
-                    euch ganz liebe Grüße!
-                </p>
-
-                <button
-                    type="button"
-                    id="absageSchliessen"
-                >
-                    Zurück
-                </button>
-
+              <label class="radio-option">
+                <input type="radio" name="teilnahme" value="nein" required />
+                Leider können wir nicht kommen.
+              </label>
             </div>
 
-        </div>
+            <!-- FAMILIENNAME -->
 
+            <div class="form-group">
+              <label for="familienname"> Familienname * </label>
 
-        <!-- ERFOLGSDIALOG -->
+              <input
+                type="text"
+                id="familienname"
+                name="familienname"
+                placeholder="z. B. Familie Müller"
+                required
+              />
 
-        <div
-            id="erfolgDialog"
-            class="erfolg-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="erfolgTitel"
-            hidden
-        >
-
-            <div class="erfolg-inhalt">
-
-                <div class="erfolg-herz">♥</div>
-
-                <h2 id="erfolgTitel">Vielen Dank!</h2>
-
-                <p>
-                    Eure Rückmeldung ist bei uns angekommen.
-                </p>
-
-                <p>
-                    Wir freuen uns sehr, diesen besonderen Tag
-                    mit euch zu feiern!
-                </p>
-
-                <div class="erfolg-datum">
-                    Marc & Julia · 16. August 2027
-                </div>
-
-                <button
-                    type="button"
-                    id="erfolgSchliessen"
-                >
-                    Zurück zur Seite
-                </button>
-
+              <p id="familiennameHinweis" class="formular-hinweis" hidden>
+                Bitte gib zuerst deinen Familiennamen ein.
+              </p>
             </div>
 
-        </div>
+            <!-- TEILNAHMEBEREICH -->
 
+            <div id="teilnahmeBereich" style="display: none">
+              <!-- ERWACHSENE -->
+
+              <div class="form-group">
+                <label for="anzahlErwachsene"> Anzahl Erwachsene </label>
+
+                <input
+                  type="number"
+                  id="anzahlErwachsene"
+                  name="anzahlErwachsene"
+                  min="1"
+                  max="20"
+                  value="1"
+                  required
+                  disabled
+                />
+              </div>
+
+              <div id="erwachseneContainer"></div>
+
+              <!-- KINDER -->
+
+              <div class="form-group">
+                <label for="anzahlKinder"> Anzahl Kinder </label>
+
+                <input
+                  type="number"
+                  id="anzahlKinder"
+                  name="anzahlKinder"
+                  min="0"
+                  max="20"
+                  value="0"
+                  required
+                  disabled
+                />
+              </div>
+
+              <div id="kinderContainer"></div>
+
+              <!-- NACHRICHT -->
+
+              <div class="form-group">
+                <label for="nachricht"> Nachricht an Marc & Julia </label>
+
+                <textarea
+                  id="nachricht"
+                  name="nachricht"
+                  rows="4"
+                  placeholder="Möchtet ihr uns noch etwas mitteilen?"
+                  disabled
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- WEITER ZUR ESSEN AUSWAHL -->
+
+            <div class="form-group">
+              <button
+                type="button"
+                id="weiterZuEssen"
+                class="absenden-button"
+                disabled
+              >
+                Essen Auswahl
+              </button>
+            </div>
+
+            <!-- ABSAGE: BUTTON ZUNÄCHST VERBORGEN -->
+
+            <div class="form-group">
+              <button
+                type="submit"
+                id="absageAbsenden"
+                class="absenden-button"
+                disabled
+                hidden
+              >
+                Rückmeldung absenden
+              </button>
+            </div>
+          </div>
+
+          <!-- SCHRITT 2: BUFFET -->
+
+          <div id="anmeldeSchritt2" hidden>
+            <div class="buffet-bereich">
+              <h2>Unser Hochzeitsbuffet</h2>
+
+              <p class="buffet-ueberschrift">BUFFET</p>
+
+              <p>
+                Für unseren Hochzeitstag haben wir ein leckeres Buffet für euch
+                geplant.
+              </p>
+
+              <p>
+                Damit wir die Verpflegung gut planen können, gebt uns bitte an,
+                wie viele Personen veganes oder vegetarisches Essen benötigen.
+              </p>
+            </div>
+
+            <!-- VEGAN -->
+
+            <div class="form-group buffet-eingabe">
+              <label for="anzahlVegan"> Anzahl vegan </label>
+
+              <input
+                type="number"
+                id="anzahlVegan"
+                name="anzahlVegan"
+                min="0"
+                value="0"
+                required
+              />
+            </div>
+
+            <!-- VEGETARISCH -->
+
+            <div class="form-group buffet-eingabe">
+              <label for="anzahlVegetarisch"> Anzahl vegetarisch </label>
+
+              <input
+                type="number"
+                id="anzahlVegetarisch"
+                name="anzahlVegetarisch"
+                min="0"
+                value="0"
+                required
+              />
+            </div>
+
+            <p class="buffet-hinweis">
+              Alle übrigen Gäste werden automatisch für das normale Buffet
+              eingeplant.
+            </p>
+
+            <p id="buffetFehler" class="formular-hinweis" hidden>
+              Die Anzahl veganer und vegetarischer Personen darf die Gesamtzahl
+              der Gäste nicht überschreiten.
+            </p>
+
+            <!-- ZURÜCK -->
+
+            <div class="form-group">
+              <button
+                type="button"
+                id="zurueckZuGaesten"
+                class="absenden-button"
+              >
+                Zurück
+              </button>
+            </div>
+
+            <!-- ENDGÜLTIG ABSENDEN -->
+
+            <div class="form-group">
+              <button type="submit" id="finalAbsenden" class="absenden-button">
+                Anmeldung absenden
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ABSAGE-DIALOG -->
+
+      <div
+        id="absageDialog"
+        class="absage-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="absageTitel"
+      >
+        <div class="absage-inhalt">
+          <img src="./assets/img/julia-marc.webp" alt="Marc und Julia" />
+
+          <h2 id="absageTitel">Wie schade!</h2>
+
+          <p>
+            Schade, dass ihr an unserem besonderen Tag nicht dabei sein könnt.
+          </p>
+
+          <p>Wir denken trotzdem an euch und senden euch ganz liebe Grüße!</p>
+
+          <button type="button" id="absageSchliessen">Zurück</button>
+        </div>
+      </div>
+
+      <!-- ERFOLGSDIALOG -->
+
+      <div
+        id="erfolgDialog"
+        class="erfolg-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="erfolgTitel"
+        hidden
+      >
+        <div class="erfolg-inhalt">
+          <div class="erfolg-herz">♥</div>
+
+          <h2 id="erfolgTitel">Vielen Dank!</h2>
+
+          <p>Eure Rückmeldung ist bei uns angekommen.</p>
+
+          <p>Wir freuen uns sehr, diesen besonderen Tag mit euch zu feiern!</p>
+
+          <div class="erfolg-datum">Marc & Julia · 16. August 2027</div>
+
+          <button type="button" id="erfolgSchliessen">Zurück zur Seite</button>
+        </div>
+      </div>
     </main>
 
-
     <!-- JAVASCRIPT -->
-<script src="./js/db.js"></script>
-<script type="module" src="./js/anmeldung.js"></script>
-
-</body>
+    <script src="./js/db.js"></script>
+    <script type="module" src="./js/anmeldung.js"></script>
+  </body>
 </html>

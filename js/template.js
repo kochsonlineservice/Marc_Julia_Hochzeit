@@ -15,7 +15,7 @@ function getHeaderTemplate() {
                     <a href="#hochzeit">Die Hochzeit</a>
                     <a href="#ablauf">Tagesablauf</a>
                     <a href="#location">Location</a>
-                    <a href="#rueckmeldung">Rückmeldung</a>
+                  <a href="./rueckmeldung.html">Rückmeldung</a>
                 </nav>
 
             </div>
@@ -25,11 +25,13 @@ function getHeaderTemplate() {
 
 
 // =========================
-// STARTBEREICH
+// STARTBEREICH UND INHALT
 // =========================
 
 function getMainTemplate() {
     return `
+        <!-- STARTBEREICH -->
+
         <section class="hero" id="home">
 
             <div class="hero-content">
@@ -60,6 +62,7 @@ function getMainTemplate() {
             </div>
 
         </section>
+
 
         <!-- UNSERE GESCHICHTE -->
 
@@ -114,6 +117,108 @@ function getMainTemplate() {
             </div>
 
         </section>
+
+
+        <!-- UNSERE HOCHZEIT -->
+
+        <section class="hochzeit" id="hochzeit">
+
+            <div class="hochzeit-intro">
+
+                <p class="hochzeit-klein">Ein besonderer Tag</p>
+
+                <h2>Unsere Hochzeit</h2>
+
+                <div class="hochzeit-deko"></div>
+
+                <p>
+                    Wir freuen uns darauf, diesen besonderen Tag
+                    gemeinsam mit euch zu feiern.
+                </p>
+
+            </div>
+
+            <div class="hochzeit-infos">
+
+                <div class="hochzeit-info">
+                    <span class="hochzeit-icon">♡</span>
+                    <h3>Wann?</h3>
+                    <p>16. August 2027</p>
+                </div>
+
+                <div class="hochzeit-info">
+                    <span class="hochzeit-icon">♡</span>
+                    <h3>Wo?</h3>
+                    <p>Sonnenhof Eventlocation</p>
+                </div>
+
+                <div class="hochzeit-info">
+                    <span class="hochzeit-icon">♡</span>
+                    <h3>Mit wem?</h3>
+                    <p>Mit unseren Lieblingsmenschen</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TAGESABLAUF -->
+
+        <section class="ablauf" id="ablauf">
+
+            <div class="ablauf-intro">
+
+                <p class="ablauf-klein">Gemeinsam feiern</p>
+
+                <h2>Unser Tagesablauf</h2>
+
+                <div class="ablauf-deko"></div>
+
+                <p>
+                    Ein Tag voller Liebe, Freude und
+                    unvergesslicher Momente.
+                </p>
+
+            </div>
+
+            <div class="ablauf-liste">
+
+                <div class="ablauf-punkt">
+                    <span class="ablauf-uhrzeit">14:00</span>
+                    <div class="ablauf-details">
+                        <h3>Sektempfang</h3>
+                        <p>Wir begrüßen unsere Gäste.</p>
+                    </div>
+                </div>
+
+                <div class="ablauf-punkt">
+                    <span class="ablauf-uhrzeit">15:00</span>
+                    <div class="ablauf-details">
+                        <h3>Trauung</h3>
+                        <p>Der schönste Moment unseres Tages.</p>
+                    </div>
+                </div>
+
+                <div class="ablauf-punkt">
+                    <span class="ablauf-uhrzeit">16:00</span>
+                    <div class="ablauf-details">
+                        <h3>Kaffee & Kuchen</h3>
+                        <p>Gemeinsam genießen und feiern.</p>
+                    </div>
+                </div>
+
+                <div class="ablauf-punkt">
+                    <span class="ablauf-uhrzeit">18:00</span>
+                    <div class="ablauf-details">
+                        <h3>Abendessen</h3>
+                        <p>Ein gemütlicher Abend mit unseren Gästen.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
     `;
 }
 
@@ -124,7 +229,7 @@ function getMainTemplate() {
 
 function getLocationTemplate() {
     return `
-        <section class="location">
+        <section class="location" id="location">
 
             <h2>Unsere Location</h2>
 
