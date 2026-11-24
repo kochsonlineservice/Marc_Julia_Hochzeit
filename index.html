@@ -1,134 +1,66 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="de">
-  <head>
+
+<head>
     <!-- Grundlegende Einstellungen -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
     <title>Marc & Julia – Unsere Hochzeit</title>
 
     <meta
-      name="description"
-      content="Wir laden euch herzlich ein, unsere Hochzeit am 16. August 2027 mit uns zu feiern."
-    />
+        name="description"
+        content="Wir laden euch herzlich ein, unsere Hochzeit am 16. August 2027 mit uns zu feiern."
+    >
 
-    <meta name="author" content="Ralph Koch" />
-    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ralph Koch">
+    <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://hochzeit-julia-marc.de/" />
+    <link rel="canonical" href="https://hochzeit-julia-marc.de/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Marc & Julia – Unsere Hochzeit" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Marc & Julia – Unsere Hochzeit">
     <meta
-      property="og:description"
-      content="Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern."
-    />
-    <meta property="og:url" content="https://hochzeit-julia-marc.de/" />
+        property="og:description"
+        content="Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern."
+    >
+    <meta property="og:url" content="https://hochzeit-julia-marc.de/">
     <meta
-      property="og:image"
-      content="https://hochzeit-julia-marc.de/assets/img/hochzeit-preview.jpg"
-    />
-    <meta property="og:site_name" content="Marc & Julia Hochzeit" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Marc & Julia – Unsere Hochzeit" />
-    <meta
-      name="twitter:description"
-      content="Wir freuen uns darauf, diesen besonderen Tag mit euch zu feiern."
-    />
-    <meta
-      name="twitter:image"
-      content="https://hochzeit-julia-marc.de/assets/img/hochzeit-preview.jpg"
-    />
+        property="og:image"
+        content="https://hochzeit-julia-marc.de/assets/img/hochzeit-preview.jpg"
+    >
+    <meta property="og:site_name" content="Marc & Julia Hochzeit">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+    <link rel="stylesheet" href="./style.css">
 
-  <body onload="init()">
-    <!-- =================================
-         BRIEFUMSCHLAG
-    ================================== -->
+</head>
 
-    <section id="briefStart" class="brief-start">
-      <div class="brief-einleitung">
-        <p>Eine besondere Einladung</p>
+<body onload="init()">
 
-        <h1>Für euch von Herzen</h1>
+    <!-- HEADER -->
+    <div id="header"></div>
 
-        <span>Wir haben eine Überraschung für euch ...</span>
-      </div>
+    <!-- HAUPTINHALT -->
+    <main id="content"></main>
 
-      <button
-        type="button"
-        id="briefOeffnen"
-        class="umschlag-button"
-        aria-label="Hochzeitseinladung öffnen"
-      >
-        <div class="umschlag">
-          <div class="umschlag-inhalt">
-    <div class="umschlag-futter">
-        <span class="monogramm">J <span>&</span> M</span>
-        <span class="futter-herz">♥</span>
-    </div>
-</div>
+    <!-- LOCATION -->
+    <div id="location"></div>
 
-          <div class="einladungskarte">
-            <p>WIR LADEN EUCH HERZLICH EIN</p>
-            <h2>Julia <span>&</span> Marc</h2>
-            <div class="karten-herz">♥</div>
-            <p class="karten-datum">16. August 2027</p>
-          </div>
-
-          <div class="umschlag-links"></div>
-
-          <div class="umschlag-rechts"></div>
-
-          <div class="umschlag-unten"></div>
-
-          <div class="umschlag-klappe"></div>
-
-          <div class="siegel">
-            <span>♥</span>
-          </div>
-        </div>
-      </button>
-
-      <p class="brief-hinweis">
-        <span>♥</span>
-        Klickt auf den Brief, um ihn zu öffnen
-      </p>
-    </section>
-
-    <!-- =================================
-         BISHERIGE HOCHZEITSSEITE
-    ================================== -->
-
-    <div id="hochzeitsseite" hidden>
-      <div id="header"></div>
-
-      <main id="content"></main>
-
-      <div id="location"></div>
-
-      <div id="footer"></div>
-    </div>
+    <!-- FOOTER -->
+    <div id="footer"></div>
 
     <!-- JAVASCRIPT -->
-
     <script src="./js/db.js"></script>
-
     <script src="./js/template.js"></script>
-
     <script src="./js/script.js"></script>
 
-    <script src="./js/startseite.js"></script>
-  </body>
+</body>
 </html>
